@@ -1,0 +1,72 @@
+ffmpeg version 2.8.11-0ubuntu0.16.04.1 Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 20160609
+  configuration: --prefix=/usr --extra-version=0ubuntu0.16.04.1 --build-suffix=-ffmpeg --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --cc=cc --cxx=g++ --enable-gpl --enable-shared --disable-stripping --disable-decoder=libopenjpeg --disable-decoder=libschroedinger --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmodplug --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libpulse --enable-librtmp --enable-libschroedinger --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxvid --enable-libzvbi --enable-openal --enable-opengl --enable-x11grab --enable-libdc1394 --enable-libiec61883 --enable-libzmq --enable-frei0r --enable-libx264 --enable-libopencv
+  libavutil      54. 31.100 / 54. 31.100
+  libavcodec     56. 60.100 / 56. 60.100
+  libavformat    56. 40.101 / 56. 40.101
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 40.101 /  5. 40.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.101 /  1.  2.101
+  libpostproc    53.  3.100 / 53.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/process/Sample_Videos.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 0
+    compatible_brands: mp41avc1
+    creation_time   : 2018-03-28 07:31:10
+    encoder         : vlc 3.0.1 stream output
+    encoder-eng     : vlc 3.0.1 stream output
+  Duration: 00:00:09.94, start: 0.000000, bitrate: 1605 kb/s
+    Stream #0:0(eng): Audio: mp3 (mp4a / 0x6134706D), 44100 Hz, stereo, s16p, 127 kb/s (default)
+    Metadata:
+      creation_time   : 2018-03-28 07:31:10
+      handler_name    : SoundHandler
+    Stream #0:1(eng): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv), 1280x720, 1483 kb/s, 29.97 fps, 29.97 tbr, 1000k tbn, 29.97 tbc (default)
+    Metadata:
+      creation_time   : 2018-03-28 07:31:10
+      handler_name    : VideoHandler
+[libx264 @ 0xb0cc80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2
+[libx264 @ 0xb0cc80] profile High, level 3.1
+[libx264 @ 0xb0cc80] 264 - core 148 r2643 5c65704 - H.264/MPEG-4 AVC codec - Copyleft 2003-2015 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[mp4 @ 0xad4be0] Codec for stream 1 does not use global headers but container format requires global headers
+Output #0, mp4, to '/var/www/html/done/resize/Sample_Videos.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 0
+    compatible_brands: mp41avc1
+    encoder         : Lavf56.40.101
+    Stream #0:0(eng): Video: h264 (libx264) ([33][0][0][0] / 0x0021), yuv420p, 1280x720, q=-1--1, 29.97 fps, 500k tbn, 29.97 tbc (default)
+    Metadata:
+      creation_time   : 2018-03-28 07:31:10
+      handler_name    : VideoHandler
+      encoder         : Lavc56.60.100 libx264
+    Stream #0:1(eng): Audio: mp3 (i[0][0][0] / 0x0069), 44100 Hz, stereo, 127 kb/s (default)
+    Metadata:
+      creation_time   : 2018-03-28 07:31:10
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:1 -> #0:0 (hevc (native) -> h264 (libx264))
+  Stream #0:0 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+frame=   62 fps=0.0 q=0.0 size=       0kB time=00:00:02.58 bitrate=   0.1kbits/s dup=3 drop=0    frame=   90 fps= 88 q=29.0 size=     320kB time=00:00:03.50 bitrate= 749.7kbits/s dup=3 drop=0    frame=  111 fps= 73 q=29.0 size=     641kB time=00:00:04.20 bitrate=1249.5kbits/s dup=3 drop=0    frame=  135 fps= 66 q=29.0 size=     991kB time=00:00:05.01 bitrate=1618.2kbits/s dup=3 drop=0    frame=  160 fps= 63 q=29.0 size=    1371kB time=00:00:05.85 bitrate=1919.0kbits/s dup=3 drop=0    frame=  182 fps= 59 q=29.0 size=    1715kB time=00:00:06.58 bitrate=2134.2kbits/s dup=3 drop=0    frame=  225 fps= 63 q=29.0 size=    2282kB time=00:00:08.01 bitrate=2330.9kbits/s dup=3 drop=0    frame=  259 fps= 63 q=29.0 size=    2905kB time=00:00:08.93 bitrate=2663.4kbits/s dup=3 drop=0    frame=  297 fps= 64 q=29.0 size=    3425kB time=00:00:08.93 bitrate=3140.7kbits/s dup=3 drop=0    frame=  301 fps= 57 q=-1.0 Lsize=    3762kB time=00:00:09.97 bitrate=3089.5kbits/s dup=3 drop=0    
+video:3614kB audio:139kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.255406%
+[libx264 @ 0xb0cc80] frame I:4     Avg QP:17.81  size: 51967
+[libx264 @ 0xb0cc80] frame P:138   Avg QP:23.95  size: 18115
+[libx264 @ 0xb0cc80] frame B:159   Avg QP:26.14  size:  6238
+[libx264 @ 0xb0cc80] consecutive B-frames: 11.0% 54.5%  4.0% 30.6%
+[libx264 @ 0xb0cc80] mb I  I16..4: 41.9% 49.9%  8.2%
+[libx264 @ 0xb0cc80] mb P  I16..4:  2.3% 11.4%  1.2%  P16..4: 37.3% 10.4%  5.6%  0.0%  0.0%    skip:31.9%
+[libx264 @ 0xb0cc80] mb B  I16..4:  0.5%  2.3%  0.2%  B16..8: 41.6%  3.8%  1.1%  direct: 1.4%  skip:49.1%  L0:45.7% L1:47.8% BI: 6.5%
+[libx264 @ 0xb0cc80] 8x8 transform intra:73.0% inter:87.1%
+[libx264 @ 0xb0cc80] coded y,uvDC,uvAC intra: 60.0% 68.3% 16.4% inter: 14.8% 10.2% 0.1%
+[libx264 @ 0xb0cc80] i16 v,h,dc,p: 33% 30%  7% 30%
+[libx264 @ 0xb0cc80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 30% 18%  5%  6%  6%  7%  6%  7%
+[libx264 @ 0xb0cc80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 49% 10%  4%  6%  4%  7%  3%  4%
+[libx264 @ 0xb0cc80] i8c dc,h,v,p: 45% 30% 17%  7%
+[libx264 @ 0xb0cc80] Weighted P-Frames: Y:1.4% UV:0.0%
+[libx264 @ 0xb0cc80] ref P L0: 54.6% 14.5% 20.9% 10.0%  0.1%
+[libx264 @ 0xb0cc80] ref B L0: 83.8% 14.6%  1.5%
+[libx264 @ 0xb0cc80] ref B L1: 96.1%  3.9%
+[libx264 @ 0xb0cc80] kb/s:2946.96
